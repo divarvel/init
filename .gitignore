@@ -1,0 +1,8 @@
+root_key.enc
+
+bin
+sbin
+usr
+lib64
+
+init
