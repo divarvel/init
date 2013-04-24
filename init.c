@@ -53,10 +53,9 @@ void unlock_root()
 			close(STDOUT_FILENO); // Close stdout
 			dup(fd[1]); // make the pipe input stdout
 			close(fd[1]);
-	printf("openssl\n");
 			execv("/usr/bin/openssl", openssl_args);
 			
-	//		exit(0);
+			exit(0);
 		}
 		else
 		{
@@ -64,10 +63,9 @@ void unlock_root()
 			close(STDIN_FILENO); // Close stdout
 			dup(fd[0]); // make the pipe output stdin
 			close(fd[0]);
-	printf("cryptsetup\n");
 			execv("/usr/bin/cryptsetup", cryptsetup_args);
 			
-	//		exit(0);
+			exit(0);
 		}
 		
 	} else {
@@ -82,12 +80,8 @@ void mount_root()
 
 int main()
 {
-	printf("Premount\n");
 	perform_mounts();	
-	printf("postmount\n");
-	printf("preunlock\n");
 	unlock_root();
-	printf("postunlock\n");
 	mount_root();
 	perform_umounts();	
 
