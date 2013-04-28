@@ -75,7 +75,7 @@ void unlock_root()
 
 void mount_root()
 {
-	mount(ROOT_PATH, "/root", ROOT_FS_TYPE, MS_RDONLY, NULL);
+	mount(ROOT_PATH, "/mnt/root", ROOT_FS_TYPE, MS_RDONLY, NULL);
 }
 
 int main()
