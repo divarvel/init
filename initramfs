@@ -8,7 +8,7 @@ file	/init					/home/clement/scripts/initramfs/init		755 0 0
 file	/root_key.inc				/home/clement/scripts/initramfs/root_key.enc    600 0 0
 
 
-file	/bin/busybox                			/bin/busybox-static				755 0 0
+file	/bin/busybox                		/bin/busybox-static				755 0 0
 file	/lib64/ld-linux-x86-64.so.2             /lib64/ld-linux-x86-64.so.2                     755 0 0
 file	/lib64/libc.so.6                        /lib64/libc.so.6                                755 0 0
 file	/lib64/libdevmapper.so.1.02             /lib64/libdevmapper.so.1.02                     755 0 0
