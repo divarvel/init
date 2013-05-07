@@ -20,4 +20,4 @@ umount /proc
 umount /sys
 umount /dev
 
-exec switch_root /mnt/root /bin/systemd
+exec switch_root /mnt/root /sbin/init
