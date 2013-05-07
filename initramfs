@@ -17,6 +17,13 @@ file	/lib/libpthread.so.0                  /lib64/libpthread.so.0               
 file	/lib/librt.so.1                       /lib64/librt.so.1                               755 0 0
 file	/lib/libuuid.so.1                     /lib64/libuuid.so.1                             755 0 0
 
+file    /usr/lib/libnss_compat-2.16.so      /usr/lib64/libnss_compat.so 755 0 0
+file    /usr/lib/libnss_db-2.16.so          /usr/lib64/libnss_db.so 755 0 0
+file    /usr/lib/libnss_files-2.16.so       /usr/lib64/libnss_files.so 755 0 0
+file    /usr/lib/libnss_hesiod-2.16.so      /usr/lib64/libnss_hesiod.so 755 0 0
+file    /usr/lib/libnss_nis-2.16.so         /usr/lib64/libnss_nis.so 755 0 0
+file    /usr/lib/libnss_nisplus-2.16.so     /usr/lib64/libnss_nisplus.so 755 0 0
+
 file	/usr/lib/libcrypto.so.1.0.0           /usr/lib64/libcrypto.so.1.0.0                   755 0 0
 file	/usr/lib/libgcrypt.so.11              /usr/lib64/libgcrypt.so.11                      755 0 0
 file	/usr/lib/libgpg-error.so              /usr/lib64/libgpg-error.so                      755 0 0
