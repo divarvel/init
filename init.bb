@@ -8,6 +8,12 @@ rescue_shell()
     exec sh
 }
 
+unlock()
+{
+	/usr/bin/openssl aes-256-cbc -d -in /root_key.enc | \
+	/sbin/cryptsetup --allow-discards --key-file=- luksOpen /dev/sda4 root || unlock 
+}
+
 
 echo "Initramfs booting..."
 
@@ -18,8 +24,7 @@ echo "Scanning for device nodes..."
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s || rescue_shell
 
-/usr/bin/openssl aes-256-cbc -d -in /root_key.enc | \
-/sbin/cryptsetup --allow-discards --key-file=- luksOpen /dev/sda4 root || rescue_shell
+unlock
 
 echo "Mounting root device: /dev/mapper/root..."
 mount -n -o ro /dev/mapper/root /mnt/root || rescue_shell
