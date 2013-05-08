@@ -15,6 +15,7 @@ file /root_key.enc /home/clement/scripts/initramfs/root_key.enc 755 0 0
 dir /lib 755 0 0
 dir /usr 755 0 0
 dir /usr/bin 755 0 0
+dir /usr/sbin 755 0 0
 dir /usr/lib 755 0 0
 
 slink /lib64 /lib 755 0 0
