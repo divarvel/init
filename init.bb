@@ -20,6 +20,8 @@ echo "Initramfs booting..."
 mount -t proc none /proc || rescue_shell
 mount -t sysfs none /sys || rescue_shell
 
+echo 0 > /proc/sys/kernel/printk
+
 echo "Scanning for device nodes..."
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s || rescue_shell
