@@ -10,6 +10,7 @@ dir /sys 755 0 0
 dir /root 755 0 0
 file /init /home/clement/scripts/initramfs/init 755 0 0
 file /root_key.enc /home/clement/scripts/initramfs/root_key.enc 755 0 0
+file /data_key.enc /home/clement/scripts/initramfs/data_key.enc 755 0 0
 
 
 dir /lib 755 0 0
