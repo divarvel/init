@@ -8,10 +8,16 @@ rescue_shell()
     exec sh
 }
 
-unlock()
+unlock_root()
 {
 	/usr/bin/openssl aes-256-cbc -d -in /root_key.enc | \
-	/sbin/cryptsetup --allow-discards --key-file=- luksOpen /dev/sda4 root || unlock 
+	/sbin/cryptsetup --allow-discards --key-file=- luksOpen /dev/sda4 root || unlock_root
+}
+
+unlock_data()
+{
+	/usr/bin/openssl aes-256-cbc -d -in /data_key.enc | \
+	/sbin/cryptsetup --allow-discards --key-file=- luksOpen /dev/sda5 data || unlock_data
 }
 
 
@@ -23,7 +29,8 @@ mount -t devtmpfs none /dev || rescue_shell
 
 echo 0 > /proc/sys/kernel/printk
 
-unlock
+unlock_root
+unlock_data
 
 echo "Mounting root device: /dev/mapper/root..."
 mount -n -o ro /dev/mapper/root /mnt/root || rescue_shell
